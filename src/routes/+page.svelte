@@ -45,7 +45,7 @@
 	</div>
 
 	<!-- Section 2: Text links, Bild rechts -->
-	<div class="flex flex-col md:flex-row items-center md:items-start">
+	<div class="flex flex-col items-center md:items-start md:flex-row-reverse">
 		<div
 			class={`md:w-1/2 flex justify-center mb-6 md:mb-0 transition-opacity duration-1000 ${
         isVisible ? "fade-in" : "opacity-0"
