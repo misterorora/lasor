@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from "svelte";
+	import '$lib/starwarsintro.css';
 
 	let isVisible = false;
 
@@ -24,6 +25,41 @@
         animation: fadeIn 1s ease-out;
     }
 </style>
+
+<!-- Place in Body where you'd like intro to appear -->
+<div class="star-wars-intro">
+
+	<!-- Blue Intro Text -->
+	<p class="intro-text">
+		Es ist soweit... wir dürfen präsentieren
+	</p>
+
+	<!-- Logo Image or Text goes in here -->
+	<h2 class="main-logo">
+		Lasor
+	</h2>
+
+	<!-- All Scrolling Content Goes in here -->
+	<div class="main-content">
+
+		<div class="title-content">
+			<p class="content-header">Laserdullies<br/>Laserschwerter für jedermann</p>
+
+			<br>
+
+			<p class="content-body">
+				After years of galactic silence, civilization is on the brink of a new Star Wars release.
+				Now, with the Force preparing to awaken, the people of Earth seek solace in films of old.
+				With nowhere to turn, they gather in great numbers and watch the original trilogy without rest.
+				Three films. 6 hours. 24 minutes. Popcorn. Slushies. Total elation.
+			</p>
+
+			<!-- button or link or whatever -->
+			<a href="/shop" class="space-button">Jetzt Kaufen!</a>
+
+		</div>
+	</div>
+</div>
 
 <div class="container mx-auto py-10 space-y-10">
 	<!-- Section 1: Bild links, Text rechts -->
