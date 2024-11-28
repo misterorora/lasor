@@ -34,23 +34,29 @@
 	</p>
 
 	<!-- Logo Image or Text goes in here -->
-	<h2 class="main-logo">
-		Lasor
+	<h2 class="main-logo flex flex-col items-center">
+		Stellar Swords
 	</h2>
 
 	<!-- All Scrolling Content Goes in here -->
 	<div class="main-content">
 
 		<div class="title-content">
-			<p class="content-header">Laserdullies<br/>Laserschwerter für jedermann</p>
+			<p class="content-header">Die Macht in jedem von uns steckt</p>
 
 			<br>
 
 			<p class="content-body">
-				After years of galactic silence, civilization is on the brink of a new Star Wars release.
-				Now, with the Force preparing to awaken, the people of Earth seek solace in films of old.
-				With nowhere to turn, they gather in great numbers and watch the original trilogy without rest.
-				Three films. 6 hours. 24 minutes. Popcorn. Slushies. Total elation.
+				Es vergingen Äonen von Jahre, bis wir endlich die Technologie entwickeln konnten,
+				um die Macht in die Hände derer zu legen, die sie verdienen.
+				Von nun an herrscht Gleichgewicht in der Galaxis.
+				Bist du bereit, die Macht zu spüren?
+			</p>
+
+			<p class="content-body">
+				Unsere Laserschwerter sind kein Spielzeug, sondern echte Werkzeug.
+				Erlebe die Macht in deinen Händen und werde zum Jedi-Meister.
+				Alle Infos findest du auf dieser Webseite!
 			</p>
 
 			<!-- button or link or whatever -->

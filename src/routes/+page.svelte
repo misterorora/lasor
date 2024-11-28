@@ -2,19 +2,17 @@
 	import { onMount } from "svelte";
 	import { goto } from '$app/navigation';
 
-	let timeout; // Speichert den Timer
-	let holdTimeout; // Timer für das Gedrückthalten
-	let redirectTimeout; // Timer für die Weiterleitung
+	let script, link;
 
 	onMount(async () => {
 		// Lade das JavaScript-Skript
-		const script = document.createElement('script');
+		script = document.createElement('script');
 		script.src = '/src/lib/hyperspace.js'; // Pfad zur Datei
 		script.async = true;
 		document.body.appendChild(script);
 
 		// Lade das CSS
-		const link = document.createElement('link');
+		link = document.createElement('link');
 		link.rel = 'stylesheet';
 		link.href = '/src/lib/hyperspace.css';
 		document.head.appendChild(link);
@@ -32,44 +30,26 @@
 
 	// Setup für Event-Listener auf dem Canvas
 	function setupCanvas(canvas) {
-		canvas.addEventListener("mousedown", () => {
-			holdTimeout = setTimeout(() => {
-				// Simuliere Loslassen nach 2 Sekunden
-				canvas.dispatchEvent(new Event("mouseup"));
+		canvas.addEventListener("click", () => {
+			// Simuliere gedrückt halten (3 Sekunden)
+			canvas.dispatchEvent(new Event("mousedown"));
 
-				// Nach 2 Sekunden Gedrückthalten einen weiteren Timer starten
-				redirectTimeout = setTimeout(() => {
-					goto('/home'); // Weiterleitung nach zusätzlichen 3 Sekunden
-				}, 5000); // 3 Sekunden Verzögerung
-			}, 2000); // 2 Sekunden Gedrückthalten
-		});
+			// Timer, um das Loslassen nach 3 Sekunden zu simulieren
+			setTimeout(() => {
+				canvas.dispatchEvent(new Event("mouseup")); // Simuliere Loslassen
+			}, 3000); // 3 Sekunden gedrückt halten
 
-		canvas.addEventListener("mouseup", () => {
-			clearTimeout(holdTimeout); // Timer für das Gedrückthalten abbrechen
-			clearTimeout(redirectTimeout); // Timer für die Weiterleitung abbrechen
-		});
-
-		// Unterstützung für Touch-Geräte
-		canvas.addEventListener("touchstart", () => {
-			holdTimeout = setTimeout(() => {
-				// Simuliere Loslassen nach 2 Sekunden
-				canvas.dispatchEvent(new Event("touchend"));
-
-				// Nach 2 Sekunden Gedrückthalten einen weiteren Timer starten
-				redirectTimeout = setTimeout(() => {
-					goto('/home'); // Weiterleitung nach zusätzlichen 3 Sekunden
-				}, 5000); // 3 Sekunden Verzögerung
-			}, 2000); // 2 Sekunden Gedrückthalten
-		});
-
-		canvas.addEventListener("touchend", () => {
-			clearTimeout(holdTimeout); // Timer für das Gedrückthalten abbrechen
-			clearTimeout(redirectTimeout); // Timer für die Weiterleitung abbrechen
+			// Starte die Weiterleitung nach 5 Sekunden
+			setTimeout(() => {
+				if (script) script.remove();
+				if (link) link.remove();
+				goto('/home'); // Weiterleitung
+			}, 8000); // 5 Sekunden insgesamt
 		});
 	}
 </script>
 
 <div class="center-text">
-	Gedrückt halten zum Starten
+	Drücke zum Starten
 </div>
 
