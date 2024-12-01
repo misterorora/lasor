@@ -14,7 +14,7 @@ body, html{
 }
 
 .star-wars-intro {
-  background: url("/Choose2.png") center center;
+  background: url("$lib/images/Choose2.png") center center;
   width: 100%;
   height: 100%;
   font-family: "Droid Sans", arial, verdana, sans-serif;

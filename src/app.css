@@ -1,3 +1,25 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+
+@font-face {
+    font-family: 'Starjout';
+    font-style: normal;
+    font-weight: 200;
+    src: url('/fonts/Starjout.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Starjedi';
+    font-style: normal;
+    font-weight: 200;
+    src: url('/fonts/Starjedi.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Starjhol';
+    font-style: normal;
+    font-weight: 200;
+    src: url('/fonts/Starjhol.ttf') format('truetype');
+}
