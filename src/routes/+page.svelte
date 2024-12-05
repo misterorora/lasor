@@ -3,18 +3,25 @@
 	import { goto } from '$app/navigation';
 
 	let script, link;
+	let isLoaded = false; // Steuerung, ob der Text angezeigt wird
 
 	onMount(async () => {
 		// Lade das JavaScript-Skript
 		script = document.createElement('script');
 		script.src = '/src/lib/hyperspace.js'; // Pfad zur Datei
 		script.async = true;
+
+		// Markiere das Skript als geladen, wenn es fertig ist
+		script.onload = () => checkLoaded();
 		document.body.appendChild(script);
 
 		// Lade das CSS
 		link = document.createElement('link');
 		link.rel = 'stylesheet';
 		link.href = '/src/lib/hyperspace.css';
+
+		// Markiere das CSS als geladen, wenn es fertig ist
+		link.onload = () => checkLoaded();
 		document.head.appendChild(link);
 
 		// Warte, bis das <canvas> verfügbar ist
@@ -27,6 +34,15 @@
 			}
 		}, 100);
 	});
+
+	// Prüfen, ob Skript und CSS geladen sind
+	function checkLoaded() {
+		if (script.readyState === 'complete' || script.readyState === undefined) {
+			if (link.readyState === 'complete' || link.readyState === undefined) {
+				isLoaded = true; // Text wird sichtbar
+			}
+		}
+	}
 
 	// Setup für Event-Listener auf dem Canvas
 	function setupCanvas(canvas) {
@@ -41,15 +57,14 @@
 
 			// Starte die Weiterleitung nach 5 Sekunden
 			setTimeout(() => {
+				goto('/home'); // Weiterleitung
 				if (script) script.remove();
 				if (link) link.remove();
-				goto('/home'); // Weiterleitung
-			}, 8000); // 5 Sekunden insgesamt
+			}, 5000); // 5 Sekunden insgesamt
 		});
 	}
 </script>
 
-<div class="center-text">
+<div class="center-text" style:display={isLoaded ? 'block' : 'none'}>
 	Drücke zum Starten
 </div>
-

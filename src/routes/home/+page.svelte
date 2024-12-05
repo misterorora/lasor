@@ -5,12 +5,13 @@
 	import download from '$lib/images/Download.png';
 	import '$lib/starwarsintro.css'
 	import StarWarsIntro from '$lib/StarWarsIntro.svelte';
-	import Cards from '$lib/Cards.svelte';
+	import SwordSelectCard from '$lib/SwordSelectCard.svelte';
+	import InterviewCard from '$lib/InterviewCard.svelte';
 
 	let images = [
 		{ src: choose2, content: StarWarsIntro },
-		{ src: choose3, content: Cards },
-		{ src: download, content: "<p class='text-white'> Download <p/>" }
+		{ src: choose3, content: SwordSelectCard },
+		{ src: download, content: InterviewCard }
 	];
 </script>
 
