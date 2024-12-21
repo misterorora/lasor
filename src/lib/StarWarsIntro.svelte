@@ -1,5 +1,16 @@
 <script>
 	import '$lib/starwarsintro.css'
+	import { onMount } from 'svelte';
+
+	let showAbspann = false;
+
+
+	onMount(() => {
+		setTimeout(() => {
+			showAbspann = true;
+		}, 5000);
+	})
+
 </script>
 
 <div class="star-wars-intro">
@@ -18,12 +29,12 @@
 	<div class="main-content">
 
 		<div class="title-content">
-			<p class="content-header">Die Macht in jedem von uns steckt</p>
+			<p class="content-header">Die Macht steckt in jedem von uns</p>
 
 			<br>
 
 			<p class="content-body">
-				Es vergingen Äonen von Jahre, bis wir endlich die Technologie entwickeln konnten,
+				Es vergingen Äonen von Jahren, bis wir endlich die Technologie entwickeln konnten,
 				um die Macht in die Hände derer zu legen, die sie verdienen.
 				Von nun an herrscht Gleichgewicht in der Galaxis.
 				Bist du bereit, die Macht zu spüren?
@@ -39,5 +50,12 @@
 			<a href="/shop" class="space-button">Jetzt Kaufen!</a>
 
 		</div>
+
 	</div>
 </div>
+<!--{#if showAbspann}-->
+<!--	<div class="text-white text-xl text-center items-center absolute">-->
+<!--		&lt;!&ndash; Blue Intro Text &ndash;&gt;-->
+<!--		Test-->
+<!--	</div>-->
+<!--{/if}-->

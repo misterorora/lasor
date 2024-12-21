@@ -1,6 +1,5 @@
 <script>
 	import { onMount } from "svelte";
-	import video from '$lib/videos/LightSaber.mov';
 
 	let isVisible = false;
 	onMount(() => {

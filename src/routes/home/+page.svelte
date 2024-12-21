@@ -7,15 +7,40 @@
 	import StarWarsIntro from '$lib/StarWarsIntro.svelte';
 	import SwordSelectCard from '$lib/SwordSelectCard.svelte';
 	import InterviewCard from '$lib/InterviewCard.svelte';
+	import { onMount } from 'svelte';
 
 	let images = [
 		{ src: choose2, content: StarWarsIntro },
 		{ src: choose3, content: SwordSelectCard },
 		{ src: download, content: InterviewCard }
 	];
+
+	onMount(() => {
+		if(document.querySelector("canvas")){document.querySelector("canvas").remove();}
+	});
 </script>
 
-<Navbar/>
+<style>
+    /* Container für Scrollen */
+    .h-screen {
+        scroll-behavior: smooth; /* Flüssiges Scrollen */
+        scroll-snap-type: y mandatory; /* Vertikales Snapping */
+        overflow-y: scroll;
+    }
+
+    /* Snap-Bereiche */
+    .snap-start {
+        scroll-snap-align: start;
+        scroll-snap-stop: always; /* Verzögertes Snapping */
+    }
+
+    /* Optionale Transition für den visuellen Effekt */
+    .snap-start {
+        transition: transform 0.8s ease, scroll-snap-align 0.8s ease;
+    }
+</style>
+
+<Navbar />
 <div class="h-screen w-screen overflow-y-scroll snap-y snap-mandatory bg-black">
 	{#each images as image (image.src)}
 		<section
