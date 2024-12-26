@@ -17,7 +17,7 @@
 
 	<!-- Blue Intro Text -->
 	<p class="intro-text">
-		Es ist soweit... wir dürfen präsentieren
+		Wir dürfen präsentieren:
 	</p>
 
 	<!-- Logo Image or Text goes in here -->
