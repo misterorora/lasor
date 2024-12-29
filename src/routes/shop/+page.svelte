@@ -1,6 +1,21 @@
 <script>
 	import Navbar from '$lib/Navbar.svelte';
 	import choose2 from '$lib/images/Choose2.png';
+	import { onDestroy, onMount } from 'svelte';
+
+	let audio;
+
+	onMount(() => {
+		audio = new Audio('/sounds/ImperialShop.mp3');
+		audio.loop = true;
+		audio.play();
+	});
+
+	onDestroy(() => {
+		if (audio) {
+			audio.pause();
+		}
+	});
 </script>
 
 <Navbar/>

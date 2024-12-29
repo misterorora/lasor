@@ -55,9 +55,9 @@
 
 			// Starte die Weiterleitung nach 6 Sekunden
 			setTimeout(() => {
-				if (audio) {
-					audio.pause();
-				}
+				// if (audio) {
+				// 	audio.pause();
+				// }
 				goto('/home');
 			}, 6000);
 		});
