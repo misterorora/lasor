@@ -4,9 +4,9 @@
 </script>
 
 <Navbar/>
-<div class="h-screen w-screen overflow-y-scroll bg-black text-white" style="background-image: url({choose2})">
-	<div class="flex flex-col items-center">
-		<img src="https://via.placeholder.com/300" alt="Animation" class="rounded-lg shadow-lg">
-		<h1 class="text-4xl font-bold text-center py-10">Shop</h1>
-	</div>
+<div
+	class="h-screen w-screen bg-black text-white flex flex-col justify-center items-center"
+	style="background-image: url({choose2}); background-size: cover; background-position: center;"
+>
+	<h1 class="text-4xl font-bold text-center">Coming Soon</h1>
 </div>

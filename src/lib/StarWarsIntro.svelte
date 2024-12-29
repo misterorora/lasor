@@ -10,7 +10,6 @@
 			showAbspann = true;
 		}, 5000);
 	})
-
 </script>
 
 <div class="star-wars-intro">
@@ -47,7 +46,7 @@
 			</p>
 
 			<!-- button or link or whatever -->
-			<a href="/shop" class="space-button">Jetzt Kaufen!</a>
+			<a href="#swords" class="space-button" >Mehr Infos!</a>
 
 		</div>
 

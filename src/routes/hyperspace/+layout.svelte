@@ -1,6 +1,11 @@
-<svelte:head>
-	<link rel="stylesheet" href="/src/hyperspace.css" />
-	<script src="/src/hyperspace.js" async></script>
-</svelte:head>
+<!--<script>-->
+<!--	import { onMount } from "svelte";-->
+
+<!--	onMount(() => {-->
+<!--		// Entferne bestehende Ressourcen-->
+
+<!--	});-->
+<!--</script>-->
 
 <slot />
+
