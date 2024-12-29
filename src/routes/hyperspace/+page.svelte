@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 
-	let audio;
+	let isLoaded = false;
 
 	onMount(() => {
 		const existingStyles = document.querySelector('link[href="/src/hyperspace.css"]');
@@ -36,10 +36,6 @@
 				setupCanvas(canvas);
 			}
 		}, 100);
-
-		// Audio-Element erstellen und Pfad anpassen!!!
-		audio = new Audio('/HyperdriveSoundShort.mp3'); // Korrekter Pfad!
-		audio.preload = 'auto'; // Audio vorladen
 	});
 
 	function setupCanvas(canvas) {
