@@ -15,9 +15,9 @@
 	};
 </script>
 
-<div class="container mx-auto py-10 space-y-10 text-white">
+<div id="swords" class="container mx-auto py-10 space-y-10 text-white">
 	<!-- Section 1: Bild links, Text rechts -->
-	<div class="flex flex-col p-10 md:flex-row items-center md:items-start">
+	<div class="flex flex-col mt-40 p-10 md:flex-row items-center md:items-start">
 		<div class="md:w-1/2 flex flex-col justify-center p-20 mb-6 ">
 			<video bind:this={videoElement} autoplay loop muted class="rounded-lg">
 				<source src={currentVideo}>

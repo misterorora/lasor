@@ -26,3 +26,11 @@ canvas {
     width: 100vw;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    scrollbar-width: none; /* Für Firefox */
+    -ms-overflow-style: none; /* Für Internet Explorer */
+}

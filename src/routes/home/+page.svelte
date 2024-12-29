@@ -7,7 +7,7 @@
 	import StarWarsIntro from '$lib/StarWarsIntro.svelte';
 	import SwordSelectCard from '$lib/SwordSelectCard.svelte';
 	import InterviewCard from '$lib/InterviewCard.svelte';
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 
 	let images = [
 		{ src: choose2, content: StarWarsIntro },
@@ -15,8 +15,20 @@
 		{ src: download, content: InterviewCard }
 	];
 
+	let mainAudio;
+
+
 	onMount(() => {
 		if(document.querySelector("canvas")){document.querySelector("canvas").remove();}
+		if (!mainAudio) {
+			mainAudio = new Audio('/sounds/MainTheme.mp3');
+			mainAudio.loop = true; // Optional: Sound in einer Schleife abspielen
+			mainAudio.play();
+		}
+	});
+
+	onDestroy(() => {
+		if(mainAudio)mainAudio.pause();
 	});
 </script>
 
